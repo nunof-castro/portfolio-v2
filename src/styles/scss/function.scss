@@ -1,0 +1,10 @@
+@use "sass:math";
+// SASS FUNCTION TO CONVERT PX INTO REM
+
+// Defining base font size
+$base-size: 16;
+
+//Function to convert px value into rem
+@function rem($target, $context: $base-size) {
+    @return math.div($target, $context) * 1rem;
+}
