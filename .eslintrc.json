@@ -18,20 +18,18 @@
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
     "plugin:import/recommended"
   ],
-  "plugins": ["@typescript-eslint", "react", "react-hooks", "import"],
+  "plugins": ["@typescript-eslint", "react", "import"],
   "rules": {
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/no-unused-vars": "error",
+
     "import/order": [
       "warn",
       {
-        "groups": [["builtin", "external"], "internal", "index"],
-        "pathGroup": [
+        "groups": [["builtin", "external"], "internal", "sibling"],
+        "pathGroups": [
           {
             "pattern": "**/*.{scss}",
             "group": "index"
