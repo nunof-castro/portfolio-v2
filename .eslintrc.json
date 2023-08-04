@@ -32,7 +32,7 @@
         "pathGroups": [
           {
             "pattern": "**/*.{scss}",
-            "group": "index"
+            "group": "sibling"
           }
         ],
         "newlines-between": "always"
