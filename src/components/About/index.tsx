@@ -3,39 +3,26 @@
 import cx from 'classnames';
 import { useEffect, useState } from 'react';
 
+import { ICertificate } from 'common/types';
 import Title from 'components/Title';
-import { getFirebaseCollection } from 'utils/analytics';
+import { getFirebaseCollection } from 'utils/firestore';
 import { zillaSlab } from 'utils/fonts';
 
 import styles from './About.module.scss';
 
-interface ICertificate {
-  id: string;
-  name: string;
-  year: number;
-}
-
 export default function About() {
   const [certificates, setCertificates] = useState<ICertificate[]>();
 
-  const getCertificates = async () => {
-    const holder: ICertificate[] = await getFirebaseCollection('certificates');
-
-    //sort certificates by year in descending order
-    setCertificates(holder.sort((a, b) => b.year - a.year));
-  };
-
   useEffect(() => {
+    const getCertificates = async () =>
+      setCertificates(await getFirebaseCollection('certificates'));
+
     getCertificates();
   }, []);
 
-  useEffect(() => {
-    console.log('certificates: ', certificates);
-  }, [certificates]);
-
   return (
     <div className={styles.wrapper}>
-      <Title title="Who Am I" subtitle="teste teste" />
+      <Title title="Who Am I" />
       <div className={styles.bio}>
         <div className={styles.info}>
           <p>
@@ -55,11 +42,18 @@ export default function About() {
         </div>
       </div>
 
+      <div className={styles.skills}>
+        <p className={cx(styles.blockTitle, zillaSlab.className)}>Main Skills</p>
+        <p className={styles.technologies}>React, Next.js, Strapi, Node, Git & SQL</p>
+      </div>
+
       <div className={styles.certificates}>
         <p className={cx(styles.blockTitle, zillaSlab.className)}>Certificates</p>
         <ul className={styles.certificates}>
           {certificates?.map(({ id, name, year }) => (
-            <li key={id}>{`- ${name}, ${year}`}</li>
+            <li key={id}>
+              {`- ${name}, `} <span>{year}</span>
+            </li>
           ))}
         </ul>
       </div>
