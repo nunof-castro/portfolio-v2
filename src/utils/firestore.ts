@@ -1,9 +1,9 @@
 import { collection, getDocs, orderBy, query } from 'firebase/firestore';
 
-import { ICertificate } from 'common/types';
+import { ICertificate, IProject } from 'common/types';
 import { db } from 'config/firebase';
 
-export async function getFirebaseCollection<T extends ICertificate>(
+export async function getFirebaseCollection<T extends ICertificate | IProject>(
   collectionName: 'certificates' | 'projects'
 ): Promise<T[]> {
   //Firestore collection reference

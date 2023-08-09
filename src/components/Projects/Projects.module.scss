@@ -1,0 +1,37 @@
+@import "styles/scss";
+
+.wrapper {
+    margin-top: rem(150);
+
+    .projects {
+        margin-top: rem(50);
+
+        .accordion {
+            width: 100%;
+
+            .header {
+                display: flex;
+                gap: rem(40);
+
+                .icon {
+                    margin-top: rem(20);
+                    transform: rotate(30deg);
+                }
+
+                .info {
+                    display: flex;
+                    flex-direction: column;
+                    font-style: italic;
+
+                    .projectName {
+                        font-size: rem(50);
+                    }
+
+                    .projectYear {
+                        font-weight: lighter;
+                    }
+                }
+            }
+        }
+    }
+}

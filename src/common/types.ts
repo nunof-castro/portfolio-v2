@@ -3,3 +3,12 @@ export interface ICertificate {
   name: string;
   year: number;
 }
+
+export interface IProject {
+  id?: string;
+  name: string;
+  year: number;
+  description: string;
+  frontend?: string;
+  backend?: string;
+}

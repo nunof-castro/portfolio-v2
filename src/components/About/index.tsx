@@ -15,7 +15,7 @@ export default function About() {
 
   useEffect(() => {
     const getCertificates = async () =>
-      setCertificates(await getFirebaseCollection('certificates'));
+      setCertificates(await getFirebaseCollection<ICertificate>('certificates'));
 
     getCertificates();
   }, []);
