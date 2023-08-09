@@ -3,12 +3,46 @@
 .navbar {
     position: fixed;
     z-index: 1;
+    display: flex;
     width: 100%;
-    justify-content: end;
+    justify-content: space-between;
     transition: .3s all ease-in-out;
 
     &.scrolled {
         background: $bg-color;
+        box-shadow: 0 15px 20px -2px rgba($color: #fff, $alpha: .05);
+
+        .socialMediaIcons {
+            a {
+                &:hover {
+                    .icon {
+                        color: white !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .socialMediaIcons {
+        display: flex;
+        gap: rem(15);
+        margin-left: rem(100);
+        padding-bottom: rem(20);
+
+        a {
+            height: fit-content;
+            margin-top: auto;
+
+            .icon {
+                transition: .3s all ease-in-out;
+            }
+
+            &:hover {
+                .icon {
+                    color: black !important;
+                }
+            }
+        }
     }
 
     .navLinks {

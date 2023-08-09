@@ -1,0 +1,57 @@
+@import "styles/scss";
+
+.wrapper {
+    margin-top: rem(150);
+
+    .bio {
+        display: flex;
+        flex-direction: column;
+        max-width: rem(950);
+
+        .info {
+            display: flex;
+            flex-direction: column;
+            gap: rem(15);
+            margin-top: rem(40);
+            font-weight: lighter;
+
+            a {
+                color: #666666;
+                text-decoration: none;
+                transition: .3s all ease-in-out;
+
+                &:hover {
+                    color: $text-white;
+                }
+            }
+
+            * {
+                margin: 0;
+            }
+        }
+    }
+
+    .certificates {
+        margin-top: rem(40);
+
+        .blockTitle {
+            font-size: rem(18);
+            font-weight: 500;
+            letter-spacing: rem(1);
+            margin: 0;
+        }
+
+        .certificates {
+            margin-top: rem(15);
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: rem(5);
+
+            li {
+                font-weight: lighter;
+            }
+        }
+    }
+}
