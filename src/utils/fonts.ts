@@ -9,7 +9,7 @@ export const zillaSlab = Zilla_Slab({
 });
 
 export const montserrat = Montserrat({
-  weight: ['300', '400'],
+  weight: ['300', '400', '500'],
   style: ['normal'],
   subsets: ['latin'],
   display: 'swap',
