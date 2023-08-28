@@ -2,14 +2,58 @@
 
 import cx from 'classnames';
 import { useEffect, useState } from 'react';
-import { FaRegSquareFull } from 'react-icons/fa6';
+import { BiLogoTwitch } from 'react-icons/bi';
 
 import { IProject } from 'common/types';
-import Title from 'components/Title';
+import Button from 'components/Button';
 import { getFirebaseCollection } from 'utils/firestore';
-import { zillaSlab } from 'utils/fonts';
 
 import styles from './Projects.module.scss';
+
+const ProjectCard = ({ project, index }: { project: IProject; index: number }) => {
+  const { backend, description, frontend, name, year, technologies, twitch } = project;
+
+  return (
+    <div className={styles.projectCard}>
+      <div className={styles.header}>
+        <span className={styles.projectNumber} style={{ color: 'white' }}>
+          {index >= 10 ? `${index}` : `0${index + 1}`}
+        </span>
+        <div className={styles.info}>
+          <span className={styles.projectName}>{name}</span>
+          <span className={styles.year}>{year}</span>
+        </div>
+      </div>
+      <p className={styles.description}>{description}</p>
+      {technologies && (
+        <div className={styles.technologies} style={{ marginBottom: !twitch ? `50px` : 0 }}>
+          {technologies?.map((technology, index) => (
+            <div key={index} className={styles.technology}>
+              {technology}
+            </div>
+          ))}
+        </div>
+      )}
+      {twitch && (
+        <a
+          href="https://www.twitch.tv/nunodcastro"
+          target="_blank"
+          className={styles.twicth}
+          rel="noreferrer"
+        >
+          <BiLogoTwitch clasName={styles.icon} size={20} />
+          <span>Follow on live</span>
+        </a>
+      )}
+      {(frontend || backend) && (
+        <div className={styles.repositoryBtns}>
+          {frontend && <Button href={frontend} text="Frontend" />}
+          {backend && <Button href={backend} text="Backend" />}
+        </div>
+      )}
+    </div>
+  );
+};
 
 export default function Projects() {
   const [projects, setProjects] = useState<IProject[]>();
@@ -21,35 +65,11 @@ export default function Projects() {
     fetchProjects();
   }, []);
 
-  useEffect(() => {
-    console.log(projects);
-  }, [projects]);
-
-  const Accordion = ({ project }: { project: IProject }) => {
-    const { id, backend, description, frontend, name, year } = project;
-
-    return (
-      <div className={styles.accordion}>
-        <div className={styles.header}>
-          <FaRegSquareFull className={styles.icon} size={20} />
-          <div className={cx(styles.info, zillaSlab.className)}>
-            <span className={styles.projectName}>{name}</span>
-            <span className={styles.projectYear}>{year}</span>
-          </div>
-        </div>
-      </div>
-    );
-  };
-
   return (
     <div className={styles.wrapper}>
-      <Title title="Projects" subtitle="Developed in College" />
-
-      <div className={styles.projects}>
-        {projects?.map((project) => (
-          <Accordion project={project} key={project.id} />
-        ))}
-      </div>
+      {projects?.map((project, index) => (
+        <ProjectCard key={`project-${index}`} project={project} index={index} />
+      ))}
     </div>
   );
 }

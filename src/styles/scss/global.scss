@@ -1,3 +1,5 @@
+@import "./mixins.scss";
+
 .container {
     margin: 0 rem(100);
 }
@@ -14,4 +16,12 @@
     letter-spacing: rem(5);
     text-transform: uppercase;
     font-weight: 400;
+}
+
+.sectionWrapper {
+    margin: rem(170) rem(100);
+
+    @include respond(md) {
+        margin: rem(170) rem(25);
+    }
 }

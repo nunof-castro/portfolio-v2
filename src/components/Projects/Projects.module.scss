@@ -1,37 +1,100 @@
 @import "styles/scss";
 
 .wrapper {
-    margin-top: rem(150);
+    @extend .sectionWrapper;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: rem(70);
 
-    .projects {
-        margin-top: rem(50);
+    @include respond(xl) {
+        gap: rem(20);
+    }
 
-        .accordion {
+    @include respond(lg) {
+        flex-direction: column;
+    }
+
+    .projectCard {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: calc(50% - rem(35));
+        border: 1px solid #7A7A7A;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.10) 0%, rgba(0, 0, 0, 0.00) 100%);
+        padding: rem(40);
+
+        @include respond(xl) {
+            width: calc(50% - rem(10));
+        }
+
+        @include respond(lg) {
             width: 100%;
+        }
 
-            .header {
-                display: flex;
-                gap: rem(40);
+        .header {
+            display: flex;
+            gap: rem(15);
 
-                .icon {
-                    margin-top: rem(20);
-                    transform: rotate(30deg);
+            .projectNumber {
+                font-size: rem(50);
+                line-height: rem(40);
+                opacity: .4;
+            }
+
+            .info {
+                * {
+                    display: block;
                 }
 
-                .info {
-                    display: flex;
-                    flex-direction: column;
-                    font-style: italic;
+                .projectName {
+                    font-size: rem(20);
+                }
 
-                    .projectName {
-                        font-size: rem(50);
-                    }
-
-                    .projectYear {
-                        font-weight: lighter;
-                    }
+                .year {
+                    font-size: rem(14);
                 }
             }
+        }
+
+        .description {
+            font-size: rem(14);
+            margin-top: rem(15);
+        }
+
+        .technologies {
+            margin-top: rem(15);
+            display: flex;
+            flex-wrap: wrap;
+            gap: rem(10);
+
+            .technology {
+                background-color: rgba($color: #fff, $alpha: .3);
+                font-size: rem(14);
+                color: white;
+                padding: rem(5) rem(10);
+                border: 1px solid rgba($color: #fff, $alpha: .4);
+            }
+        }
+
+        .twicth {
+            display: flex;
+            margin-top: rem(20);
+            font-size: rem(14);
+            align-items: center;
+            gap: rem(5);
+            color: white;
+            text-decoration: none;
+            width: fit-content;
+            margin-bottom: rem(50);
+        }
+
+        .repositoryBtns {
+            display: flex;
+            gap: rem(20);
+            margin-top: auto;
+            font-size: rem(14);
         }
     }
 }

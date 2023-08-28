@@ -57,10 +57,10 @@ export default function Landing() {
 
   useEffect(() => {
     if (loading) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflowY = 'hidden';
     } else {
       const arrowText = document.querySelector('.arrowText p') as HTMLElement;
-      document.body.style.overflow = 'scroll';
+      document.body.style.overflowY = 'scroll';
 
       arrowText.innerHTML = arrowText?.innerText
         .split('')

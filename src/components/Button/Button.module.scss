@@ -1,0 +1,20 @@
+@import "styles/scss";
+
+
+.btn {
+    position: relative;
+    display: flex;
+    background-color: rgba($color: #fff, $alpha: 0.2);
+    width: fit-content;
+    color: white;
+    text-decoration: none;
+    padding: rem(12) rem(10);
+    z-index: 2;
+    cursor: pointer;
+    transition: .5s all;
+
+    &:hover {
+        background-color: rgba($color: #fff, $alpha: 1.0);
+        color: black;
+    }
+}

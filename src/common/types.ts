@@ -11,4 +11,6 @@ export interface IProject {
   description: string;
   frontend?: string;
   backend?: string;
+  twitch?: boolean;
+  technologies?: Array<string>;
 }
