@@ -157,7 +157,7 @@ export default function Landing() {
                   NO
                 </motion.span>
               </motion.h1>
-              {width && width <= 480 && <p className={styles.role}>Software Developer</p>}
+              {width && width <= 480 && <h2 className={styles.role}>Software Developer</h2>}
               <motion.div className={styles.imgWrapper} layoutId="imgWrapper">
                 <Image
                   src="/images/profile.jpeg"
@@ -173,7 +173,7 @@ export default function Landing() {
               animate="animate"
               className={styles.bottomBar}
             >
-              {width && width > 480 && <span className={styles.role}>Software Developer</span>}
+              {width && width > 480 && <h2 className={styles.role}>Software Developer</h2>}
               <span className={styles.circle}>
                 <div className={styles.arrow}>
                   <FiChevronDown size={25} />

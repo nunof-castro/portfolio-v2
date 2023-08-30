@@ -115,6 +115,7 @@
             width: 100%;
             text-align: center;
             top: rem(215);
+            font-size: rem(16);
 
             @media only screen and (max-width: 400px) {
                 top: rem(150);
@@ -165,6 +166,7 @@
         .role {
             padding-left: rem(100);
             height: fit-content;
+            font-size: rem(16);
 
 
             @include respond(md) {
