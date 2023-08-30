@@ -1,5 +1,6 @@
 'use client';
 
+import cx from 'classnames';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import { BiLogoTwitch } from 'react-icons/bi';
@@ -7,6 +8,7 @@ import { BiLogoTwitch } from 'react-icons/bi';
 import { IProject } from 'common/types';
 import Button from 'components/Button';
 import { getFirebaseCollection } from 'utils/firestore';
+import { lato } from 'utils/fonts';
 
 import styles from './Projects.module.scss';
 
@@ -28,19 +30,19 @@ const ProjectCard = ({ project, index }: { project: IProject; index: number }) =
       className={styles.projectCard}
     >
       <div className={styles.header}>
-        <span className={styles.projectNumber} style={{ color: 'white' }}>
+        <span className={cx(styles.projectNumber, lato.className)} style={{ color: 'white' }}>
           {index >= 10 ? `${index}` : `0${index + 1}`}
         </span>
         <div className={styles.info}>
           <span className={styles.projectName}>{name}</span>
-          <span className={styles.year}>{year}</span>
+          <span className={cx(styles.year, lato.className)}>{year}</span>
         </div>
       </div>
-      <p className={styles.description}>{description}</p>
+      <p className={cx(styles.description, lato.className)}>{description}</p>
       {technologies && (
         <div className={styles.technologies} style={{ marginBottom: !twitch ? `50px` : 0 }}>
           {technologies?.map((technology, index) => (
-            <div key={index} className={styles.technology}>
+            <div key={index} className={cx(styles.technology, lato.className)}>
               {technology}
             </div>
           ))}
@@ -50,7 +52,7 @@ const ProjectCard = ({ project, index }: { project: IProject; index: number }) =
         <a
           href="https://www.twitch.tv/nunodcastro"
           target="_blank"
-          className={styles.twicth}
+          className={cx(styles.twicth, lato.className)}
           rel="noreferrer"
         >
           <BiLogoTwitch clasName={styles.icon} size={20} />

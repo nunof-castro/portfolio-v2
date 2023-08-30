@@ -8,6 +8,7 @@ import { useRef } from 'react';
 
 import Button from 'components/Button';
 import TextLoop from 'components/TextLoop';
+import { lato } from 'utils/fonts';
 // import { getFirebaseCollection } from 'utils/firestore';
 
 import styles from './About.module.scss';
@@ -41,12 +42,12 @@ export default function About() {
       <div className={styles.loopWrapper}>
         <TextLoop words={loopWords} className={styles.loopText} />
       </div>
-      <p className={styles.description}>
+      <p className={cx(styles.description, lato.className)}>
         are traits that define my work ethic and modus operandi. I will always reach for a great
         work environment as my social soft skills combined with my commitment, make business and
         inter-personal relationships natural.
       </p>
-      <p className={cx(styles.description, styles.secondParagraph)}>
+      <p className={cx(styles.description, styles.secondParagraph, lato.className)}>
         I present myself as a full-stack developer with experience on web development and API
         integration.
       </p>

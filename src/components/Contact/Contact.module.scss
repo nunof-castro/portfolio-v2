@@ -9,28 +9,36 @@
         max-width: rem(1000);
         text-transform: uppercase;
         font-weight: bolder;
-        color: #151515;
+        color: white;
         line-height: rem(180);
+        letter-spacing: rem(16);
 
         @include respond(xl) {
             line-height: rem(130);
             font-size: rem(150);
+            max-width: rem(600);
         }
 
         @include respond(lg) {
-            line-height: rem(90);
-            font-size: rem(100);
+            line-height: rem(120);
+            font-size: rem(130);
+            max-width: rem(500);
+            letter-spacing: rem(0);
         }
 
         @include respond(sm) {
             text-align: center;
-            line-height: rem(75);
-            font-size: rem(85);
+            line-height: rem(100);
+            font-size: rem(100);
+            max-width: rem(400);
+            margin-left: auto;
+            margin-right: auto;
         }
 
         @include respond(xs) {
-            line-height: rem(55);
-            font-size: rem(60);
+            line-height: rem(80);
+            font-size: rem(80);
+            max-width: rem(350);
         }
     }
 

@@ -1,15 +1,15 @@
-import { Montserrat, Zilla_Slab } from 'next/font/google';
+import { Lato, Oswald } from 'next/font/google';
 
-export const zillaSlab = Zilla_Slab({
-  weight: ['300', '400', '500'],
+export const oswald = Oswald({
+  weight: ['300', '400', '500', '600', '700'],
   style: ['normal'],
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-zillaSlab'
 });
 
-export const montserrat = Montserrat({
-  weight: ['300', '400', '500'],
+export const lato = Lato({
+  weight: ['300', '400'],
   style: ['normal'],
   subsets: ['latin'],
   display: 'swap',
