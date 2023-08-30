@@ -4,7 +4,7 @@ import 'styles/globals.scss';
 import { lato, oswald } from 'utils/fonts';
 
 export const metadata: Metadata = {
-  title: 'Nuno de Castro - Full-Stack Developer',
+  title: 'Nuno de Castro - Software Developer',
   description:
     'Develop responsive and high performance websites and help you with deployment. I present myself as software developer'
 };
