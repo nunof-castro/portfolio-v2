@@ -1,7 +1,7 @@
 'use client';
 
-import cx from 'classnames';
-import { useEffect, useState } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
 import { BiLogoTwitch } from 'react-icons/bi';
 
 import { IProject } from 'common/types';
@@ -12,9 +12,21 @@ import styles from './Projects.module.scss';
 
 const ProjectCard = ({ project, index }: { project: IProject; index: number }) => {
   const { backend, description, frontend, name, year, technologies, twitch } = project;
+  const projectRef = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: projectRef,
+    offset: ['0 1', '1 1']
+  });
+
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.9, 1]);
 
   return (
-    <div className={styles.projectCard}>
+    <motion.div
+      ref={projectRef}
+      style={{ scale: scaleProgress, opacity: scrollYProgress }}
+      className={styles.projectCard}
+    >
       <div className={styles.header}>
         <span className={styles.projectNumber} style={{ color: 'white' }}>
           {index >= 10 ? `${index}` : `0${index + 1}`}
@@ -51,7 +63,7 @@ const ProjectCard = ({ project, index }: { project: IProject; index: number }) =
           {backend && <Button href={backend} text="Backend" />}
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
 

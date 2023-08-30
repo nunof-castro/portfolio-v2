@@ -7,36 +7,31 @@
         text-align: center;
     }
 
-    .title {
-        text-transform: uppercase;
-        font-size: rem(50);
-        font-weight: bold;
+    .loopWrapper {
+        height: rem(120);
 
-        @media only screen and (max-width: rem(1300)) {
-            font-size: rem(40);
+        @include respond(md) {
+            height: rem(70);
         }
 
-        @include respond(xl) {
-            font-size: rem(30);
-            line-height: rem(40);
+        @media only screen and (max-width: rem(380)) {
+            height: rem(40);
         }
 
-        @include respond(lg) {
-            font-size: rem(25);
-        }
+        .loopText {
+            @include respond(md) {
+                font-size: rem(50);
+            }
 
-        @include respond(sm) {
-            font-size: rem(18);
-        }
-
-        @include respond(xs) {
-            font-size: rem(15);
+            @media only screen and (max-width: rem(380)) {
+                font-size: rem(30);
+            }
         }
     }
 
     .description {
         max-width: rem(945);
-        margin: 0 auto;
+        margin: rem(20) auto 0 auto;
         font-size: rem(15);
         font-weight: 300;
 

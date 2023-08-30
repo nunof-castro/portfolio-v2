@@ -1,0 +1,85 @@
+@import "styles/scss";
+
+.wrapper {
+    @extend .sectionWrapper;
+    margin-bottom: rem(50);
+
+    .title {
+        font-size: rem(200);
+        max-width: rem(1000);
+        text-transform: uppercase;
+        font-weight: bolder;
+        color: #151515;
+        line-height: rem(180);
+
+        @include respond(xl) {
+            line-height: rem(130);
+            font-size: rem(150);
+        }
+
+        @include respond(lg) {
+            line-height: rem(90);
+            font-size: rem(100);
+        }
+
+        @include respond(sm) {
+            text-align: center;
+            line-height: rem(75);
+            font-size: rem(85);
+        }
+
+        @include respond(xs) {
+            line-height: rem(55);
+            font-size: rem(60);
+        }
+    }
+
+    .msg {
+        margin-top: rem(10);
+        margin-left: rem(15);
+
+        @include respond(sm) {
+            text-align: center;
+            margin-left: rem(5);
+            font-size: rem(14);
+        }
+    }
+
+    .rightBlock {
+        margin-top: rem(100);
+
+        @include respond(sm) {
+            margin-top: rem(50);
+        }
+
+        .textLoop {
+            font-size: rem(20);
+            width: fit-content;
+            margin-left: auto;
+
+            @include respond(sm) {
+                font-size: rem(14);
+                margin-left: rem(5);
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        .email {
+            margin-top: rem(10);
+            text-align: right;
+            display: block;
+            color: white;
+            text-decoration: underline;
+            cursor: pointer;
+            width: fit-content;
+            margin-left: auto;
+
+            @include respond(sm) {
+                margin-left: auto;
+                margin-right: auto
+            }
+        }
+    }
+
+}

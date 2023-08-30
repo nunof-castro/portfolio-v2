@@ -7,6 +7,7 @@ import { useRef } from 'react';
 // import { ICertificate } from 'common/types';
 
 import Button from 'components/Button';
+import TextLoop from 'components/TextLoop';
 // import { getFirebaseCollection } from 'utils/firestore';
 
 import styles from './About.module.scss';
@@ -22,11 +23,12 @@ export default function About() {
   // }, []);
 
   const aboutRef = useRef<HTMLElement>(null);
-
   const { scrollYProgress } = useScroll({
     target: aboutRef,
     offset: ['0 1', '1.33 1']
   });
+
+  const loopWords: Array<string> = ['ambitious', 'devoted', 'motivated'];
 
   return (
     <motion.section
@@ -36,9 +38,11 @@ export default function About() {
       className={styles.wrapper}
       ref={aboutRef}
     >
-      <p className={styles.title}>ambitious | devoted | motivated</p>
+      <div className={styles.loopWrapper}>
+        <TextLoop words={loopWords} className={styles.loopText} />
+      </div>
       <p className={styles.description}>
-        Are traits that define my work ethic and modus operandi. I will always reach for a great
+        are traits that define my work ethic and modus operandi. I will always reach for a great
         work environment as my social soft skills combined with my commitment, make business and
         inter-personal relationships natural.
       </p>

@@ -155,7 +155,7 @@
         bottom: rem(40);
         display: flex;
         justify-content: space-between;
-        align-items: end;
+        align-items: flex-end;
         width: 100%;
 
         @include respond(xs) {

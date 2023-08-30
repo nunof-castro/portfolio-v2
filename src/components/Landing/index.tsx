@@ -26,13 +26,23 @@ export default function Landing() {
     {
       name: 'github',
       link: 'https://github.com/nunof-castro',
-      icon: <BiLogoGithub className={styles.icon} size={width > 480 ? 25 : 20} title={'github'} />
+      icon: (
+        <BiLogoGithub
+          className={styles.icon}
+          size={width && width > 480 ? 25 : 20}
+          title={'github'}
+        />
+      )
     },
     {
       name: 'linkedin',
       link: 'https://www.linkedin.com/in/nunof-castro/',
       icon: (
-        <BiLogoLinkedin className={styles.icon} size={width > 480 ? 25 : 20} title={'linkedin'} />
+        <BiLogoLinkedin
+          className={styles.icon}
+          size={width && width > 480 ? 25 : 20}
+          title={'linkedin'}
+        />
       )
     },
     {
@@ -41,7 +51,7 @@ export default function Landing() {
       icon: (
         <BiLogoInstagramAlt
           className={styles.icon}
-          size={width > 480 ? 25 : 20}
+          size={width && width > 480 ? 25 : 20}
           title={'instagram'}
         />
       )
@@ -50,7 +60,11 @@ export default function Landing() {
       name: 'twitch',
       link: 'https://www.twitch.tv/nunodcastro',
       icon: (
-        <BiLogoTwitch className={styles.icon} size={width > 480 ? 25 : 20} title={'instagram'} />
+        <BiLogoTwitch
+          className={styles.icon}
+          size={width && width > 480 ? 25 : 20}
+          title={'instagram'}
+        />
       )
     }
   ];
@@ -127,7 +141,7 @@ export default function Landing() {
                   </a>
                 ))}
               </div>
-              {width > 480 && <p className={styles.location}>based in OPorto</p>}
+              {width && width > 480 && <p className={styles.location}>based in OPorto</p>}
             </motion.div>
             <div className={styles.content}>
               <motion.h1
@@ -143,7 +157,7 @@ export default function Landing() {
                   NO
                 </motion.span>
               </motion.h1>
-              {width <= 480 && <p className={styles.role}>Software Developer</p>}
+              {width && width <= 480 && <p className={styles.role}>Software Developer</p>}
               <motion.div className={styles.imgWrapper} layoutId="imgWrapper">
                 <Image
                   src="/images/profile.jpeg"
@@ -159,7 +173,7 @@ export default function Landing() {
               animate="animate"
               className={styles.bottomBar}
             >
-              {width > 480 && <span className={styles.role}>Software Developer</span>}
+              {width && width > 480 && <span className={styles.role}>Software Developer</span>}
               <span className={styles.circle}>
                 <div className={styles.arrow}>
                   <FiChevronDown size={25} />
