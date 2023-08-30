@@ -9,14 +9,9 @@ import { FiChevronDown } from 'react-icons/fi';
 
 import Loader from 'components/Loader';
 import useWindowSize from 'hooks/useWindowSize';
+import { ISocialMedia } from 'types/common';
 
 import styles from './Landing.module.scss';
-
-interface ISocialMedia {
-  name: 'github' | 'linkedin' | 'instagram' | 'twitch';
-  link: string;
-  icon: JSX.Element;
-}
 
 export default function Landing() {
   const [loading, setLoading] = useState<boolean>(true);
