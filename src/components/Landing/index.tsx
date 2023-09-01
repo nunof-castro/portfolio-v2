@@ -58,7 +58,7 @@ export default function Landing() {
         <BiLogoTwitch
           className={styles.icon}
           size={width && width > 480 ? 25 : 20}
-          title={'instagram'}
+          title={'twitch'}
         />
       )
     }
