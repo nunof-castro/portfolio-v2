@@ -55,7 +55,7 @@ const ProjectCard = ({ project, index }: { project: IProject; index: number }) =
           className={cx(styles.twicth, lato.className)}
           rel="noreferrer"
         >
-          <BiLogoTwitch clasName={styles.icon} size={20} />
+          <BiLogoTwitch className={styles.icon} size={20} />
           <span>Follow on live</span>
         </a>
       )}
