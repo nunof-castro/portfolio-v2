@@ -49,7 +49,7 @@ export default function About() {
       </p>
       <p className={cx(styles.description, styles.secondParagraph, lato.className)}>
         I present myself as a full-stack developer with experience in web development and API
-        integration and a University Lecturer at the
+        integration and a Colege Lecturer at the
         <span style={{ fontStyle: 'italic' }}>Escola de Media Artes e Design</span> of Polytechnic
         Institute of Porto, teaching programming-related subjects.
       </p>
