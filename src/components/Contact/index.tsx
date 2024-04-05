@@ -57,7 +57,7 @@ export default function Contact() {
           ))}
         </div>
         {/* <a href="mailto: nunocos125@gmail.com" className={styles.email}>
-          nunocos125@gmail.com
+          nunocos125@gmail.commmm
         </a> */}
       </div>
     </motion.section>
