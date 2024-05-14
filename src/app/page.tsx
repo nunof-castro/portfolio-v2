@@ -1,14 +1,16 @@
+import 'mapbox-gl/dist/mapbox-gl.css';
+
 import About from 'components/About';
 import Contact from 'components/Contact';
+import Globe from 'components/Globe';
 import Landing from 'components/Landing';
-import Projects from 'components/Projects';
 
 export default function Home() {
   return (
     <main>
       <Landing />
       <About />
-      <Projects />
+      <Globe />
       <Contact />
     </main>
   );
